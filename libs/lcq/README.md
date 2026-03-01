@@ -1,11 +1,17 @@
-# lcq
+# Limited Concurrency Queue
 
-This library was generated with [Nx](https://nx.dev).
+## Abstract
 
-## Building
+```
+Javascript is single threaded
+Code executes until it hits an async operation, then it goes back on the event loop
+The next executable bit of code runs
+Hence why it's important to not block the event loop
 
-Run `nx build lcq` to build the library.
+In certain contexts you may want to limit the number of concurrent async operations
 
-## Running unit tests
-
-Run `nx test lcq` to execute the unit tests via [Vitest](https://vitest.dev/).
+  Case: Batch API Request Processing
+  Goal: Programatically send a thousand http requests to an endpoint
+  Problem: Sending all thousand at once could cause DoS on server
+  Solution: Limit number of concurrent requests
+```
