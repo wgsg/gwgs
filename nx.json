@@ -57,7 +57,7 @@
   "release": {
     "projects": [
       "!utils",
-      "!@org/source"
+      "!@gwgs/source"
     ],
     "version": {
       "preVersionCommand": "npx nx run-many -t build"

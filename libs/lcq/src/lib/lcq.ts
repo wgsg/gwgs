@@ -1,3 +1,5 @@
-export function lcq(): string {
-  return 'lcq';
+import { Queue, QueueConfig } from './queue.js';
+
+export function lcq(config?: QueueConfig) {
+  return new Queue(config ?? {});
 }
