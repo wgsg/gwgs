@@ -1,10 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -17,9 +14,7 @@
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
+        "typecheck": { "targetName": "typecheck" },
         "build": {
           "targetName": "build",
           "configName": "tsconfig.lib.json",
@@ -41,34 +36,14 @@
         "watchDepsTargetName": "watch-deps"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/vitest",
-      "options": {
-        "testTargetName": "test"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/vitest", "options": { "testTargetName": "test" } }
   ],
   "release": {
-    "projects": [
-      "!utils",
-      "!@org/source"
-    ],
-    "version": {
-      "preVersionCommand": "npx nx run-many -t build"
-    }
+    "projects": ["!utils", "!@org/source"],
+    "version": { "preVersionCommand": "npx nx run-many -t build" }
   },
-  "targetDefaults": {
-    "test": {
-      "dependsOn": [
-        "^build"
-      ]
-    }
-  },
-  "neverConnectToCloud": true
+  "targetDefaults": { "test": { "dependsOn": ["^build"] } },
+  "neverConnectToCloud": true,
+  "nxCloudId": "69a84a212af671e60456fac9"
 }
