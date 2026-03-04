@@ -36,14 +36,37 @@
         "watchDepsTargetName": "watch-deps"
       }
     },
-    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
-    { "plugin": "@nx/vitest", "options": { "testTargetName": "test" } }
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "test"
+      }
+    },
+    {
+      "plugin": "@nx/rollup/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
   ],
   "release": {
-    "projects": ["!utils", "!@org/source"],
-    "version": { "preVersionCommand": "npx nx run-many -t build" }
+    "projects": ["!utils", "!@gwgs/source"],
+    "version": {
+      "preVersionCommand": "npx nx run-many -t build"
+    }
   },
-  "targetDefaults": { "test": { "dependsOn": ["^build"] } },
-  "neverConnectToCloud": true,
+  "targetDefaults": {
+    "test": {
+      "dependsOn": ["^build"]
+    }
+  },
   "nxCloudId": "69a84a212af671e60456fac9"
 }
