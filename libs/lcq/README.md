@@ -28,7 +28,7 @@ const queue = lcq({ maxConcurrency: 5 });
 queue.add(
   () => fetch('/api/item/1').then(() => {}),
   () => fetch('/api/item/2').then(() => {}),
-  () => fetch('/api/item/3').then(() => {}),
+  () => fetch('/api/item/3').then(() => {})
 );
 
 await queue.start();
@@ -55,16 +55,16 @@ Factory function. Returns a new `Queue` instance.
 
 ### `new Queue(config?)`
 
-| Option | Type | Default | Description |
-|---|---|---|---|
-| `maxConcurrency` | `number` | `10` | Maximum number of tasks running concurrently. |
-| `threshold` | `number` | `Infinity` | Maximum run duration in milliseconds before the queue stops. |
+| Option           | Type     | Default    | Description                                                  |
+| ---------------- | -------- | ---------- | ------------------------------------------------------------ |
+| `maxConcurrency` | `number` | `10`       | Maximum number of tasks running concurrently.                |
+| `threshold`      | `number` | `Infinity` | Maximum run duration in milliseconds before the queue stops. |
 
 ### Instance methods
 
-| Method | Description |
-|---|---|
-| `add(...items)` | Appends one or more tasks to the queue. |
-| `start()` | Begins processing. Resolves when all tasks finish or the queue is stopped. |
-| `stop()` | Signals the queue to stop after the current task completes. |
-| `clear()` | Removes all pending tasks from the queue. |
+| Method          | Description                                                                |
+| --------------- | -------------------------------------------------------------------------- |
+| `add(...items)` | Appends one or more tasks to the queue.                                    |
+| `start()`       | Begins processing. Resolves when all tasks finish or the queue is stopped. |
+| `stop()`        | Signals the queue to stop after the current task completes.                |
+| `clear()`       | Removes all pending tasks from the queue.                                  |
