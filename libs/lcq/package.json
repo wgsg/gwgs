@@ -34,5 +34,8 @@
     "dist"
   ],
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "nx-release-publish": "npm publish"
+  }
 }
