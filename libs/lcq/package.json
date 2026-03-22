@@ -1,6 +1,6 @@
 {
   "name": "@gwgs/lcq",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "A lightweight async task queue for JavaScript/TypeScript that limits the number of promises running concurrently.",
   "repository": {
     "type": "git",
