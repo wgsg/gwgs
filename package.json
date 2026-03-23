@@ -2,7 +2,11 @@
   "name": "@gwgs/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "git:clean": "npm run git:clean:tags && npm run git:clean:branches",
+    "git:clean:tags": "git tag -l | xargs git tag -d && git fetch --tags",
+    "git:clean:branches": "git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+  },
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
