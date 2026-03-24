@@ -1,3 +1,13 @@
+## 0.2.2 (2026-03-24)
+
+### 🚀 Features
+
+- **lcq:** resolve sleep promise when queue tasks complete ([#7](https://github.com/wgsg/gwgs/pull/7))
+
+### ❤️ Thank You
+
+- Chris Waters
+
 ## 0.2.1 (2026-03-24)
 
 This was a version bump only for @gwgs/lcq to align it with other projects, there were no code changes.
