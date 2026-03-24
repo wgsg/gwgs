@@ -13,9 +13,17 @@ export type QueueItem = {
   (): Promise<void>;
 };
 
+let sleep_active = false,
+  sleep_timeout: NodeJS.Timeout,
+  sleep_reslove: (v?: unknown) => void;
 /** Pauses execution for one heartbeat interval. */
 async function sleep() {
-  await new Promise((resolve) => setTimeout(resolve, HEARTRATE));
+  await new Promise((resolve) => {
+    sleep_active = true;
+    sleep_reslove = resolve;
+    sleep_timeout = setTimeout(resolve, HEARTRATE);
+  });
+  sleep_active = false;
 }
 
 /**
@@ -83,6 +91,11 @@ export class Queue {
     Promise.resolve(next()).then(() => {
       this.#nConcurrency--;
       debug('Promise resolved, #nConcurrency is now ' + this.#nConcurrency);
+      if (sleep_active) {
+        debug('Sleep active, clearing timeouts');
+        clearTimeout(sleep_timeout);
+        sleep_reslove();
+      }
     });
   }
 
