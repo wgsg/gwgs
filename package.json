@@ -13,6 +13,7 @@
     "@nx/eslint": "22.5.1",
     "@nx/eslint-plugin": "22.5.1",
     "@nx/js": "^22.5.1",
+    "@nx/plugin": "^22.5.1",
     "@nx/rollup": "^22.5.1",
     "@nx/vite": "22.5.1",
     "@nx/vitest": "22.5.1",
@@ -52,6 +53,5 @@
         }
       }
     }
-  },
-  "dependencies": {}
+  }
 }
