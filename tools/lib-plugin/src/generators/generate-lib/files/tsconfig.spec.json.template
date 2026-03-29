@@ -8,7 +8,8 @@
       "vite/client",
       "node",
       "vitest"
-    ]
+    ],
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "vite.config.mts",
