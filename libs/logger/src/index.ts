@@ -1,1 +1,1 @@
-const variable = 'logger';
+export * from './logger';
