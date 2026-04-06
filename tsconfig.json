@@ -5,6 +5,12 @@
   "references": [
     {
       "path": "./libs/lcq"
+    },
+    {
+      "path": "./tools/lib-plugin"
+    },
+    {
+      "path": "./libs/logger"
     }
   ]
 }

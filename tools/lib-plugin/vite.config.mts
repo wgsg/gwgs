@@ -1,13 +1,19 @@
-import { defineConfig } from 'vitest/config';
+/// <reference types='vitest' />
+import { defineConfig } from 'vite';
 
 export default defineConfig(() => ({
   root: import.meta.dirname,
-  cacheDir: '../../node_modules/.vite/libs/lcq',
+  cacheDir: '../../node_modules/.vite/tools/lib-plugin',
+  plugins: [],
+  // Uncomment this if you are using workers.
+  // worker: {
+  //  plugins: [],
+  // },
   test: {
-    name: '@gwgs/lcq',
+    name: '@gwgs/lib-plugin',
     watch: false,
     globals: true,
-    environment: 'node',
+    environment: 'jsdom',
     include: ['{src,tests}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {

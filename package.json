@@ -13,11 +13,13 @@
     "@nx/eslint": "22.5.1",
     "@nx/eslint-plugin": "22.5.1",
     "@nx/js": "^22.5.1",
+    "@nx/plugin": "^22.5.1",
     "@nx/rollup": "^22.5.1",
     "@nx/vite": "22.5.1",
     "@nx/vitest": "22.5.1",
     "@nx/web": "22.5.1",
     "@swc-node/register": "1.11.1",
+    "@swc/cli": "~0.8.0",
     "@swc/core": "1.15.8",
     "@swc/helpers": "0.5.18",
     "@types/node": "20.19.9",
@@ -25,6 +27,7 @@
     "@vitest/ui": "4.0.9",
     "eslint": "~8.57.0",
     "jiti": "2.4.2",
+    "jsdom": "^27.1.0",
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "22.5.1",
     "prettier": "^2.6.2",
@@ -38,7 +41,8 @@
   },
   "workspaces": [
     "packages/*",
-    "libs/*"
+    "libs/*",
+    "tools/*"
   ],
   "nx": {
     "includedScripts": [],
@@ -53,5 +57,7 @@
       }
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "@nx/devkit": "22.5.1"
+  }
 }

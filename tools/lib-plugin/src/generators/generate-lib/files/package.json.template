@@ -1,0 +1,38 @@
+{
+  "name": "@gwgs/<%= name %>",
+  "version": "0.0.0",
+  "description": "A generated library.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wgsg/gwgs.git",
+    "directory": "libs/<%= name %>"
+  },
+  "author": {
+    "name": "Chris Waters",
+    "url": "https://www.npmjs.com/~crispwaters"
+  },
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.esm.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs.js"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "dependencies": {}
+}
