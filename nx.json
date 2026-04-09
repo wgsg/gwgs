@@ -79,7 +79,7 @@
     "projectsRelationship": "independent",
     "version": {
       "conventionalCommits": true,
-      "preVersionCommand": "npx nx run-many -t build"
+      "fallbackCurrentVersionResolver": "disk"
     }
   },
   "targetDefaults": {
@@ -90,6 +90,9 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "nx-release-publish": {
+      "dependsOn": ["build"]
     }
   },
   "nxCloudId": "69a84a212af671e60456fac9"
